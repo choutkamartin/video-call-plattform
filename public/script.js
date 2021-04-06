@@ -56,7 +56,15 @@ function addVideoStream(video, stream) {
   });
   videoGrid.append(video);
 
-  document.getElementById("mute-button").addEventListener("click", () => {
-    stream.getTracks().forEach((track) => (track.enabled = !track.enabled));
+  document.getElementById("mute-video").addEventListener("click", () => {
+    stream
+      .getVideoTracks()
+      .forEach((track) => (track.enabled = !track.enabled));
+  });
+
+  document.getElementById("mute-audio").addEventListener("click", () => {
+    stream
+      .getAudioTracks()
+      .forEach((track) => (track.enabled = !track.enabled));
   });
 }
