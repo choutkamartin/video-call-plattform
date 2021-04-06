@@ -55,8 +55,8 @@ function addVideoStream(video, stream) {
     video.play();
   });
   videoGrid.append(video);
-}
 
-document.getElementById("mute-button").addEventListener("click", () => {
-  video.getTracks().forEach((track) => (track.enabled = !track.enabled));
-});
+  document.getElementById("mute-button").addEventListener("click", () => {
+    stream.getTracks().forEach((track) => (track.enabled = !track.enabled));
+  });
+}
